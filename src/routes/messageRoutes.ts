@@ -6,12 +6,6 @@ import slackService from '../services/slackServices';
 
 const router = Router();
 
-router.get('/trigger-scheduler', (req: Request, res: Response) => {
-  scheduler.reload();
-  res.send('Scheduler triggered');
-});
-
-
 router.post('/send', (async (req: Request, res: Response) => {
   const { channel, message } = req.body;
 

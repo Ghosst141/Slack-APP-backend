@@ -31,6 +31,14 @@ app.get('/hi', (req:Request, res:Response) => {
 app.use('/auth', authRoutes);
 app.use('/messages', messageRoutes);
 
+
+app.get('/trigger-scheduler', (req: Request, res: Response) => {
+  scheduler.reload();
+  res.send('Scheduler triggered');
+});
+
+
+
 db.initialize();
 scheduler.initialize();
 
