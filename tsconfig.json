@@ -12,6 +12,8 @@
     /* Type Checking */
     "strict": true,                                      /* Enable all strict type-checking options. */
    
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "src",                                 /* Skip type checking all .d.ts files. */
   }
 }

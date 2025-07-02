@@ -1,20 +1,4 @@
-# Node modules
-node_modules/
-
-# Compiled output (if using TypeScript output folder)
-dist/
-build/
-
-# System files
-.DS_Store
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Database file
-data.db
-
-# Environment files
+node_modules
+dist
 .env
+data.db
