@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'http://localhost:5173', // or whatever port your frontend runs on
+  origin: process.env.CORS_ORIGIN,
   credentials: true,
 }));
 app.use(express.json());
