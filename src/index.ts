@@ -32,6 +32,6 @@ app.use('/auth', authRoutes);
 app.use('/messages', messageRoutes);
 
 db.initialize();
-// scheduler.initialize();
+scheduler.initialize();
 
 app.listen(PORT, () => console.log(`Backend server running on port ${PORT}`));
