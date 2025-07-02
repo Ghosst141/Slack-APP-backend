@@ -10,7 +10,7 @@ router.post('/send', (async (req: Request, res: Response) => {
   const { channel, message } = req.body;
 
   try {
-    const response = await slackService.sendMessage(channel, message);
+    const response:any = await slackService.sendMessage(channel, message);
     res.send('Message sent');
   } catch (err) {
     res.status(401).send('Failed to send message from send endpoint');
@@ -40,7 +40,7 @@ router.get('/channels', (async (req: Request, res: Response) => {
   if (!token) return res.status(400).send('Slack not connected');
 
   try {
-    const response = await axios.get('https://slack.com/api/conversations.list', {
+    const response:any = await axios.get('https://slack.com/api/conversations.list', {
       headers: { Authorization: `Bearer ${token}` },
       params: { types: 'public_channel,private_channel' }
     });

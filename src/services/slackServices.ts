@@ -9,7 +9,7 @@ export default {
         if (!token || !refreshToken) throw new Error('Slack not connected');
 
         try {
-            const response = await axios.post('https://slack.com/api/chat.postMessage', {
+            const response:any = await axios.post('https://slack.com/api/chat.postMessage', {
                 channel,
                 text: message,
             }, {
@@ -23,7 +23,7 @@ export default {
 
                 const newToken = await this.refreshToken(refreshToken);
                 if (newToken) {
-                    const retry = await axios.post('https://slack.com/api/chat.postMessage', {
+                    const retry:any = await axios.post('https://slack.com/api/chat.postMessage', {
                         channel,
                         text: message,
                     }, {
@@ -49,7 +49,7 @@ export default {
 
     async refreshToken(refreshToken: string): Promise<string | null> {
         try {
-            const response = await axios.post('https://slack.com/api/oauth.v2.access', null, {
+            const response:any = await axios.post('https://slack.com/api/oauth.v2.access', null, {
                 params: {
                     client_id: process.env.SLACK_CLIENT_ID!,
                     client_secret: process.env.SLACK_CLIENT_SECRET!,
