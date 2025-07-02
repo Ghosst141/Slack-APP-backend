@@ -1,0 +1,13 @@
+name: Trigger Scheduler
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every 1 minute (adjust as needed)
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger backend scheduler
+        run: |
+          curl -X GET "https://slack-app-backend.onrender.com/trigger-scheduler"
