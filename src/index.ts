@@ -21,12 +21,12 @@ app.get('/hi', (req:Request, res:Response) => {
   res.json({ message: 'Hello from the backend!' });
 })
 
-app.get('/delaccess', (req:Request, res:Response) => {
-  dbs.prepare(`update tokens 
-    set access_token = 'dadsadasaca'
-    `).run();
-  res.json({ message: 'Hello from the aceess change!' });
-})
+// app.get('/delaccess', (req:Request, res:Response) => {
+//   dbs.prepare(`update tokens 
+//     set access_token = 'dadsadasaca'
+//     `).run();
+//   res.json({ message: 'Hello from the aceess change!' });
+// })
 
 app.use('/auth', authRoutes);
 app.use('/messages', messageRoutes);
