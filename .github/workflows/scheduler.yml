@@ -3,7 +3,7 @@ name: Trigger Scheduler
 on:
   schedule:
     - cron: '*/1 * * * *'  # Runs every 1 minute (adjust as needed)
-
+  workflow_dispatch:
 jobs:
   trigger:
     runs-on: ubuntu-latest
