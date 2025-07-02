@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import axios from 'axios';
 import db from '../db/database';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = Router();
 
@@ -32,7 +34,7 @@ router.get('/callback', async (req, res) => {
 
     if (response.data.ok) {
       db.saveTokens(response.data.team.id, response.data.access_token, response.data.refresh_token);
-      res.redirect('http://localhost:5173');
+      res.redirect(`${process.env.CORS_ORIGIN}`);
     } else {
       res.status(400).send('Slack Auth Failed');
     }
